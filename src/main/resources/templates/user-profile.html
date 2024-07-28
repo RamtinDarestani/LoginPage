@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>User Profile</title>
+</head>
+<body>
+<h1>User Profile</h1>
+<div th:if="${user != null}">
+  <p>Email: <span th:text="${user.email}"></span></p>
+  <p>First Name: <span th:text="${user.firstName}"></span></p>
+  <p>Last Name: <span th:text="${user.lastName}"></span></p>
+  <img th:if="${user.profilePicture}" th:src="${user.profilePicture}" alt="Profile Picture"/>
+</div>
+<div th:if="${user == null}">
+  <p>User information not available.</p>
+</div>
+<a href="/logout">Logout</a>
+</body>
+</html>
